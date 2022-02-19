@@ -64,35 +64,14 @@
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>ambit</groupId>
-			<artifactId>ambit2-core</artifactId>
-			<version>${ambit.version}</version>
-			<type>jar</type>
-		</dependency>
+		</dependency>		
 		<dependency>
 			<groupId>ambit</groupId>
 			<artifactId>ambit2-smarts</artifactId>
 			<version>${ambit.version}</version>
 			<type>jar</type>
-		</dependency>		
-		
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-        <!-- dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.4.4</version>
-        </dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.4.4</version>
-		</dependency-->
+		</dependency>
+        
 	</dependencies>
 	
 
@@ -107,28 +86,7 @@
 				<filtering>true</filtering>
 			</resource-->
 		</resources>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-shade-plugin</artifactId>
-				<version>3.1.0</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-						<configuration>
-							<transformers>
-								<transformer
-									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>pu.reactor.ReactorGUIApp</mainClass>
-								</transformer>
-							</transformers>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+		<plugins>			
 		</plugins>		
 		<pluginManagement>
 			<plugins>
@@ -180,25 +138,7 @@
 					</plugin>
 				</plugins>
 			</build>
-		</profile>
-		<profile>
-			<id>JRE6</id>
-			<activation>
-				<jdk>1.6</jdk>
-			</activation>
-			<properties>
-				<sourceVersion>1.6</sourceVersion>
-			</properties>
-		</profile>
-		<profile>
-			<id>JRE7</id>
-			<activation>
-				<jdk>1.7</jdk>
-			</activation>
-			<properties>
-				<sourceVersion>1.7</sourceVersion>
-			</properties>
-		</profile>
+		</profile>		
 		<profile>
 			<id>JRE8</id>
 			<activation>
