@@ -88,7 +88,12 @@ public class GenerateMoleculeCode {
 			int index0 = mol.indexOf(bo.getAtom(0));
 			int index1 = mol.indexOf(bo.getAtom(1));			
 			String bondOrderStr = bo.getOrder().toString();
-			
+			if (bo.getOrder() == IBond.Order.UNSET) {
+				if (bo.isAromatic())
+					bondOrderStr = "ALTERN";
+				else
+					bondOrderStr = "SINGLE";
+			}
 			sb.append("InchiBond " + boPrefix + i + " = new InchiBond(" 
 					+ atPrefix + index0 + " ," + atPrefix + index1 + " ," + 
 					 "InchiBondType." + bondOrderStr + ");\n");
