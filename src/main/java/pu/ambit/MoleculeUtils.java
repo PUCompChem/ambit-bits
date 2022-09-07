@@ -11,4 +11,13 @@ public class MoleculeUtils {
 		return sg.create(mol);
 	}
 	
+	public static String rosdalToSmiles(String rosdal) throws Exception {
+		ROSDALParser rosdalParser = new ROSDALParser();	
+		IAtomContainer mol = rosdalParser.parseROSDAL(rosdal);
+		if (rosdalParser.getNumOfErrors() > 0)
+			throw new Exception("ROSDAL prser error:" + rosdalParser.getErrorMessages());
+		
+		return getSmiles(mol);
+	}
+	
 }

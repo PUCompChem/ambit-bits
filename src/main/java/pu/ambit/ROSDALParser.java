@@ -39,6 +39,10 @@ public class ROSDALParser
 	int currBond;
 	boolean flagNewAtom;
 
+	public int getNumOfErrors() {
+		return errors.size();
+	}
+	
 	public String getErrorMessages()
 	{
 		StringBuffer sb = new StringBuffer();
