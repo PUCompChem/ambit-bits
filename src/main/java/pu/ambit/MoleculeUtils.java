@@ -20,4 +20,14 @@ public class MoleculeUtils {
 		return getSmiles(mol);
 	}
 	
+	public static double getMolarVolume(IAtomContainer mol) {
+		//TODO
+		return 0.0;
+	}
+	
+	public static double getMolarVolume(String atomSymbols[], double[][] atomCoordinates) {
+		//TODO
+		return 0.0;
+	}
+	
 }
