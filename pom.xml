@@ -71,6 +71,12 @@
 			<version>${ambit.version}</version>
 			<type>jar</type>
 		</dependency>
+		<dependency>
+			<groupId>ambit</groupId>
+			<artifactId>ambit2-groupcontribution</artifactId>
+			<version>${ambit.version}</version>
+			<type>jar</type>
+		</dependency>
         
 	</dependencies>
 	
