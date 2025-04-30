@@ -20,12 +20,12 @@ public class MoleculeUtils {
 		return getSmiles(mol);
 	}
 	
-	public static double getMolarVolume(IAtomContainer mol) {
+	public static double calcVdWVolumeFrom3D(IAtomContainer mol) {
 		//TODO
 		return 0.0;
 	}
 	
-	public static double getMolarVolume(String atomSymbols[], double[][] atomCoordinates) {
+	public static double calcVdWVolumeFrom3D(String atomSymbols[], double[][] atomCoordinates) {
 		//TODO
 		return 0.0;
 	}
