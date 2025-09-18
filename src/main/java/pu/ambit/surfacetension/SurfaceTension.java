@@ -10,19 +10,32 @@ public class SurfaceTension
 	public String eCohGCMModelFile = null;
 	GroupContributionModel gcmECoh = null; 
 	
-	public int setupGCMModel() throws Exception
+	public String molVolGCMModelFile = null;
+	GroupContributionModel gcmMolVol = null;
+	
+	boolean flagGCMModelsStatus = false;
+	
+	public int setupGCMModels() throws Exception
 	{
 		GCM2Json g2j = new GCM2Json();
-		gcmECoh = g2j.loadFromJSON(new File(eCohGCMModelFile));
 		
+		gcmECoh = g2j.loadFromJSON(new File(eCohGCMModelFile));
 		if (!g2j.configErrors.isEmpty())
 		{	
 			System.out.println(g2j.getAllErrorsAsString());
+			flagGCMModelsStatus = false;
 			return -1;
 		}	
-		else if (!g2j.configErrors.isEmpty())
-			System.out.println(g2j.getAllErrorsAsString());
 		
+		gcmMolVol = g2j.loadFromJSON(new File(molVolGCMModelFile));
+		if (!g2j.configErrors.isEmpty())
+		{	
+			System.out.println(g2j.getAllErrorsAsString());
+			flagGCMModelsStatus = false;
+			return -1;
+		}
+		
+		flagGCMModelsStatus = true;
 		return 0;
 	}
 }
